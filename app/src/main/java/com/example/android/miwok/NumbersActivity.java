@@ -17,11 +17,7 @@ package com.example.android.miwok;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
-import android.widget.ArrayAdapter;
-import android.widget.LinearLayout;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -30,19 +26,19 @@ public class NumbersActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_numbers);
+        setContentView(R.layout.word_list);
 
         ArrayList<Word> Words = new ArrayList<Word>();
-        Words.add(new Word("lutti", "one"));
-        Words.add(new Word("otiiko", "two"));
-        Words.add(new Word("tolookosu", "three"));
-        Words.add(new Word("oyyisa", "four"));
-        Words.add(new Word("massokka", "five"));
-        Words.add(new Word("temmokka", "six"));
-        Words.add(new Word("kenekaku", "seven"));
-        Words.add(new Word("kawinta", "eight"));
-        Words.add(new Word("wo'e", "nine"));
-        Words.add(new Word("na'aacha", "ten"));
+        Words.add(new Word("lutti", "one", R.drawable.number_one));
+        Words.add(new Word("otiiko", "two", R.drawable.number_two));
+        Words.add(new Word("tolookosu", "three", R.drawable.number_three));
+        Words.add(new Word("oyyisa", "four", R.drawable.number_four));
+        Words.add(new Word("massokka", "five", R.drawable.number_five));
+        Words.add(new Word("temmokka", "six", R.drawable.number_six));
+        Words.add(new Word("kenekaku", "seven", R.drawable.number_seven));
+        Words.add(new Word("kawinta", "eight", R.drawable.number_eight));
+        Words.add(new Word("wo'e", "nine", R.drawable.number_nine));
+        Words.add(new Word("na'aacha", "ten", R.drawable.number_ten));
 
 
         WordAdapter adapter = new WordAdapter (this, Words);

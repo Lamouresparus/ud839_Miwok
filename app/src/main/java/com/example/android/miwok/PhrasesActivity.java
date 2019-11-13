@@ -15,14 +15,37 @@
  */
 package com.example.android.miwok;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.widget.ListView;
+
+import java.util.ArrayList;
 
 public class PhrasesActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_phrases);
+        setContentView(R.layout.word_list);
+
+        ArrayList<Word> Words = new ArrayList<Word>();
+        Words.add(new Word("minto wuksus", "Where are you going?"));
+        Words.add(new Word("tinna oyaase'na", "What is your name?"));
+        Words.add(new Word("oyaaset", "My name is..."));
+        Words.add(new Word("michaksas", "How are you feeling?"));
+        Words.add(new Word("kuchi achit", "I'm feeling good."));
+        Words.add(new Word("aanas'aa", "Are you coming?"));
+        Words.add(new Word("haa'aanam", "Yes, I'm coming."));
+        Words.add(new Word("aanam", "I'm coming."));
+        Words.add(new Word("yoowutis", "Let's go"));
+        Words.add(new Word("anni'nem", "Come here"));
+
+
+
+        WordAdapter adapter = new WordAdapter (this, Words);
+
+        ListView numbersListView = (ListView) findViewById(R.id.list);
+
+        numbersListView.setAdapter(adapter);
     }
 }
